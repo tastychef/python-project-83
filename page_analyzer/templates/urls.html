@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+
+<main class="flex-grow-1">
+    <div class="container-lg mt-3">
+      <h1>Сайты</h1>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover text-nowrap" data-test="urls">
+    <tbody>
+      <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Последняя проверка</th>
+        <th>Код ответа</th>
+      </tr>
+      {% for record in records %}
+        <tr>
+          <td>{{ record.url_id }}</td>
+          <td>
+            <a href="{{ url_for('show_url', record_id=record.url_id) }}">
+                {{ record.name }}
+            </a>
+          </td>
+          <td>{{ record.created_at.strftime('%Y-%m-%d') }}</td>
+          <td>{{ record.status_code }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+    </div>
+  </main>
+
+{% endblock %}
