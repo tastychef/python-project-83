@@ -177,7 +177,3 @@ def show_error_page(error):
         'page404.html',
         title='Страница не найдена',
     ), 404
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
