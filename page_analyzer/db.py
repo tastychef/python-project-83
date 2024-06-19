@@ -1,5 +1,3 @@
-"""Module for working with database."""
-
 import os
 from contextlib import contextmanager
 from datetime import datetime
@@ -29,7 +27,7 @@ def launch_connection():
             connection.close()
 
 
-class UrlDatabase(object):
+class UrlDatabase:
     """Storage url data."""
 
     def save(self, url_data: dict) -> int:

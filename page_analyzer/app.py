@@ -1,4 +1,3 @@
-"""Flask app module."""
 import os
 
 import requests
@@ -86,7 +85,6 @@ def post_url():
                     record_id=existing_record.get('id'),
                 ),
             )
-
         flash('Страница успешно добавлена', 'success')
         return redirect(
             url_for(
